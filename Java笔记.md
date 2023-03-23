@@ -61,4 +61,6 @@ public class MyApp {
 }
 ```
 
+···
+
 这样就可以自动扫描MyApp类所在包及其子包中的所有组件，包括加了@Component注解的类，并将它们注册到Spring的bean容器中。
