@@ -39,7 +39,10 @@ public class AppConfig { 、
 3. 如果你已经将@ComponentScan注解添加到了配置类中，但是仍然不能将组件注册到Spring的bean容器中，可以尝试在启动AnnotationConfigApplicationContext时，手动将该类添加到bean容器中，例如：
 
 ```
-javaCopy code
+AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(); context.register(MyComponent.class); 
+context.refresh();
 ```
+
+··
 
 这样，即使该类所在的包没有被扫描到，也可以将它注册到Spring的bean容器中。
