@@ -62,6 +62,22 @@ java -jar myapp.jar --spring.profiles.active=test
 
 ### 如果使用profile的方式，是否每个Bean都要指定它的profile，如果大部分类都是默认在什么情况都需要加载，只是少部分类是需要指定，那使用profile方案时候都需要将所有类加上profile吗？
 
+使用Profile的方式可以在Spring中为Bean定义提供基于条件的选择，而不必修改Bean本身。因此，您只需要将特定Bean的Profile设置为需要的值，而不必将所有Bean都设置为Profile。
+
+如果大部分类都是默认情况下需要加载，只有一小部分需要根据Profile来决定是否加载，那么您可以在配置文件中指定默认Profile，然后对于需要根据Profile来决定是否加载的Bean，您可以在其对应的@Configuration或@Component注解上指定特定的Profile，如下所示：
+
+```
+javaCopy code
+```
+
+`@Configuration @Profile("dev") // 只有在dev环境下才加载这个配置类 public class MyConfig { @Bean public MyBean myBean() { return new MyBean(); } }`
+
+在上面的示例中，MyConfig类只有在"dev"环境下才会被加载，并且仅当它被加载时，MyBean才会被注册到Spring的bean容器中。
+
+如果您没有在配置文件中指定Profile，则默认Profile为"default"，这意味着没有指定Profile的Bean将会在默认情况下被加载。
+
+因此，您只需要在需要根据Profile来决定是否加载的Bean上指定Profile，而不必将所有Bean都设置为Profile。
+
 ### **_除了Conditional和_**Profile**_这两种方式外，还有其他方式某个Bean要在某种情况下才被加载（注册给spring管理）吗？_**
 
 除了使用@Conditional注解和Profile功能外，还可以使用Spring的BeanFactoryPostProcessor接口来有条件地加载Bean。
