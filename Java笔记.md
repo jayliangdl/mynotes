@@ -65,3 +65,5 @@ public class MyApp {
 这样就可以自动扫描MyApp类所在包及其子包中的所有组件，包括加了@Component注解的类，并将它们注册到Spring的bean容器中。
 
 ### **_问：除了SpringBootApplication，还有其他ApplicationContext不需要指定@ComponentScan，就可以扫描到这个启动类下面的所有加了@Component的类吗？_**
+
+除了SpringBootApplication注解外，这些ApplicationContext实现类都需要显式指定@Configuration和@ComponentScan注解，才能够自动扫描指定包及其子包下的所有组件。而SpringBootApplication注解包含了@Configuration、@EnableAutoConfiguration和@ComponentScan注解，因此可以省略@Configuration和@ComponentScan注解的配置。
