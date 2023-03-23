@@ -1,10 +1,10 @@
 # Java笔记
 
-### 问：已有一个第三方JAR包，如果想要覆盖它里边的某个类的实现，可以怎么做？
+### **_问：已有一个第三方JAR包，如果想要覆盖它里边的某个类的实现，可以怎么做？_**
 
 答： 在项目里引用这个第三方包，并在本项目内新建一个类，package与类名都与想被覆盖的class相同，逻辑写自己的。
 
-**_问：Spring中有一个Bean要在某种情况下才被加载（注册给spring管理），例如在测试环境加载，在生产环境则不被加载。需要怎么做？_**
+### **_问：Spring中有一个Bean要在某种情况下才被加载（注册给spring管理），例如在测试环境加载，在生产环境则不被加载。需要怎么做？_**
 
 可以使用Spring中的@Conditional注解来实现有条件地加载Bean，@Conditional注解允许你定义一个或多个条件，只有满足条件时才会加载Bean。以下是一个简单的示例，展示如何根据当前环境来有条件地加载Bean：
 
@@ -34,7 +34,7 @@ TestCondition类实现了Spring的Condition接口，它重写了matches()方法�
 
 通过这种方式，你可以根据当前环境来有条件地加载Bean，可以定义多个Condition实现类，并在@Conditional注解中引用它们来实现更复杂的条件判断。
 
-**_问：Spring中有哪些常用的ApplicationContext？_**
+### **_问：Spring中有哪些常用的ApplicationContext？_**
 
 - ClassPathXmlApplicationContext：可以通过在classpath中查找XML文件来装配bean。
 
@@ -46,7 +46,7 @@ TestCondition类实现了Spring的Condition接口，它重写了matches()方法�
 
 - AnnotationConfigWebApplicationContext：可以在Web应用程序中使用注解配置应用程序上下文。
 
-**_问：如果我只是在项目的某个类中添加了@component注解，使用AnnotationConfigApplicationContext启动，好像并没有将此类注册到Spring的bean容器中。_**
+### **_问：如果我只是在项目的某个类中添加了@component注解，使用AnnotationConfigApplicationContext启动，好像并没有将此类注册到Spring的bean容器中。_**
 
 使用AnnotationConfigApplicationContext启动时，默认情况下它会扫描指定的配置类及其子包中的所有组件，并将它们注册到Spring的bean容器中。但是，如果你只是在某个类上添加了@Component注解，可能是因为这个类所在的包没有被扫描到。
 
