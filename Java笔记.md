@@ -60,17 +60,22 @@ java -jar myapp.jar --spring.profiles.active=test
 
 需要注意的是，如果不指定spring.profiles.active属性，则默认情况下所有不带@Profile注解的Bean都会被加载并注册到Spring的bean容器中。因此，在使用Profile功能时，要确保你只将必须的Bean标记为特定环境的Bean，以避免不必要的资源浪费。
 
-### 如果使用profile的方式，是否每个Bean都要指定它的profile，如果大部分类都是默认在什么情况都需要加载，只是少部分类是需要指定，那使用profile方案时候都需要将所有类加上profile吗？
+### **_问：如果使用profile的方式，是否每个Bean都要指定它的profile，如果大部分类都是默认在什么情况都需要加载，只是少部分类是需要指定，那使用profile方案时候都需要将所有类加上profile吗？_**
 
 使用Profile的方式可以在Spring中为Bean定义提供基于条件的选择，而不必修改Bean本身。因此，您只需要将特定Bean的Profile设置为需要的值，而不必将所有Bean都设置为Profile。
 
 如果大部分类都是默认情况下需要加载，只有一小部分需要根据Profile来决定是否加载，那么您可以在配置文件中指定默认Profile，然后对于需要根据Profile来决定是否加载的Bean，您可以在其对应的@Configuration或@Component注解上指定特定的Profile，如下所示：
 
 ```
-javaCopy code
+@Configuration
+@Profile("dev") // 只有在dev环境下才加载这个配置类
+public class MyConfig {
+    @Bean
+    public MyBean myBean() {
+        return new MyBean();
+    }
+}
 ```
-
-`@Configuration @Profile("dev") // 只有在dev环境下才加载这个配置类 public class MyConfig { @Bean public MyBean myBean() { return new MyBean(); } }`
 
 在上面的示例中，MyConfig类只有在"dev"环境下才会被加载，并且仅当它被加载时，MyBean才会被注册到Spring的bean容器中。
 
