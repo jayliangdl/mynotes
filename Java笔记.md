@@ -193,6 +193,8 @@ public class MyApp {
 
 1\. 通过XML配置文件，使用<bean>元素配置bean。
 
+例如： <bean id="demoService" class="com.demo.service.DemoServiceImpl"> <property name="demoDao" ref="demoDao"/> </bean>
+
 2\. 通过Java注解配置bean，使用@Component、@Service、@Repository、@Controller等注解配置bean。
 
 3\. 通过Java API配置bean，使用BeanDefinition、BeanDefinitionRegistry等API将bean注册到IoC容器。
