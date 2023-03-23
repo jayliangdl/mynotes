@@ -22,7 +22,12 @@ TestCondition类的实现示例如下：
 
 ```
 public class TestCondition implements Condition { 
-@Override public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) { String env = context.getEnvironment().getProperty("spring.profiles.active"); return env != null && env.equals("test"); } }
+    @Override 
+    public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) { 
+        String env =   context.getEnvironment().getProperty("spring.profiles.active"); 
+    return env != null && env.equals("test"); 
+    } 
+}
 ```
 
 TestCondition类实现了Spring的Condition接口，它重写了matches()方法，该方法用于判断当前环境是否为测试环境。在上面的示例中，它通过context.getEnvironment().getProperty("spring.profiles.active")获取当前环境的名称，并判断是否为"test"。如果是测试环境，则返回true，否则返回false。
