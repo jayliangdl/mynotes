@@ -42,7 +42,10 @@ TestCondition类实现了Spring的Condition接口，它重写了matches()方法�
 
 ```
 @Component 
-@Profile("test") public class MyTestBean { // ... }
+@Profile("test") 
+public class MyTestBean { 
+    // ... 
+}
 ```
 
 在上面的示例中，@Profile("test")表示这个Bean只在test环境下才会被注册到Spring的bean容器中。如果你在其他环境下启动应用程序，这个Bean将不会被加载。
@@ -50,10 +53,8 @@ TestCondition类实现了Spring的Condition接口，它重写了matches()方法�
 在启动应用程序时，可以通过设置spring.profiles.active属性来指定要加载的环境，例如：
 
 ```
-bashCopy code
+java -jar myapp.jar --spring.profiles.active=test
 ```
-
-`java -jar myapp.jar --spring.profiles.active=test`
 
 这将启动应用程序，并将环境设置为test，这样所有带有@Profile("test")注解的Bean将会被加载并注册到Spring的bean容器中。
 
