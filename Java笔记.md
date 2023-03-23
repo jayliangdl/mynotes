@@ -187,4 +187,12 @@ public class MyApp {
 
 ### 问：在spring中，怎么把一个类交给Spring管理？有哪几种方式？
 
-在spring中，将一个类交给Spring管理有以下几种方式： 1. 通过XML配置文件，使用<bean>元素配置bean。 2. 通过Java注解配置bean，使用@Component、@Service、@Repository、@Controller等注解配置bean。 3. 通过Java API配置bean，使用BeanDefinition、BeanDefinitionRegistry等API将bean注册到IoC容器。
+在spring中，将一个类交给Spring管理有以下几种方式：
+
+ 
+
+1\. 通过XML配置文件，使用<bean>元素配置bean。
+
+2\. 通过Java注解配置bean，使用@Component、@Service、@Repository、@Controller等注解配置bean。
+
+3\. 通过Java API配置bean，使用BeanDefinition、BeanDefinitionRegistry等API将bean注册到IoC容器。
