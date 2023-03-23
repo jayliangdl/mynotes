@@ -4,9 +4,9 @@
 
 答： 在项目里引用这个第三方包，并在本项目内新建一个类，package与类名都与想被覆盖的class相同，逻辑写自己的。
 
-### 问：Spring中有一个Bean要在某种情况下才被加载（注册给spring管理），例如在测试环境加载，在生产环境则不被加载。需要怎么做？
+**_问：Spring中有一个Bean要在某种情况下才被加载（注册给spring管理），例如在测试环境加载，在生产环境则不被加载。需要怎么做？_**
 
-### 问：Spring中有哪些常用的ApplicationContext？
+**_问：Spring中有哪些常用的ApplicationContext？_**
 
 - ClassPathXmlApplicationContext：可以通过在classpath中查找XML文件来装配bean。
 
@@ -66,4 +66,4 @@ public class MyApp {
 
 ### **_问：除了SpringBootApplication，还有其他ApplicationContext不需要指定@ComponentScan，就可以扫描到这个启动类下面的所有加了@Component的类吗？_**
 
-除了SpringBootApplication注解外，这些ApplicationContext实现类都需要显式指定@Configuration和@ComponentScan注解，才能够自动扫描指定包及其子包下的所有组件。而SpringBootApplication注解包含了@Configuration、@EnableAutoConfiguration和@ComponentScan注解，因此可以省略@Configuration和@ComponentScan注解的配置。
+除了SpringBootApplication注解外，其他常用的ApplicationContext实现类都需要显式指定@Configuration和@ComponentScan注解，才能够自动扫描指定包及其子包下的所有组件。而SpringBootApplication注解包含了@Configuration、@EnableAutoConfiguration和@ComponentScan注解，因此可以省略@Configuration和@ComponentScan注解的配置。
