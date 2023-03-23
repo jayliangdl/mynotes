@@ -34,7 +34,7 @@ TestCondition类实现了Spring的Condition接口，它重写了matches()方法�
 
 通过这种方式，你可以根据当前环境来有条件地加载Bean，可以定义多个Condition实现类，并在@Conditional注解中引用它们来实现更复杂的条件判断。
 
-\###
+### 除了Conditional这种方式外，还有其他方式某个Bean要在某种情况下才被加载（注册给spring管理）吗？
 
 ### **_问：Spring中有哪些常用的ApplicationContext？_**
 
