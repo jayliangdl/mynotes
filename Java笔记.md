@@ -43,6 +43,6 @@ AnnotationConfigApplicationContext context = new AnnotationConfigApplicationCont
 context.refresh();
 ```
 
-··
+\`JAVA\`
 
 这样，即使该类所在的包没有被扫描到，也可以将它注册到Spring的bean容器中。
