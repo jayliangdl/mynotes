@@ -209,3 +209,5 @@ public class DemoServiceImpl implements DemoService {
 ```
 
 3\. 通过Java API配置bean，使用BeanDefinition、BeanDefinitionRegistry等API将bean注册到IoC容器。
+
+\`\`
