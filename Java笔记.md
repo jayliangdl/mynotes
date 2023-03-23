@@ -34,17 +34,16 @@ TestCondition类实现了Spring的Condition接口，它重写了matches()方法�
 
 通过这种方式，你可以根据当前环境来有条件地加载Bean，可以定义多个Condition实现类，并在@Conditional注解中引用它们来实现更复杂的条件判断。
 
-### 除了Conditional这种方式外，还有其他方式某个Bean要在某种情况下才被加载（注册给spring管理）吗？
+### **_问：除了Conditional这种方式外，还有其他方式某个Bean要在某种情况下才被加载（注册给spring管理）吗？_**
 
 除了使用@Conditional注解外，还可以使用Spring的Profile功能来有条件地加载Bean。Profile是一种将Bean注册到特定环境中的机制，它可以让你定义一组Bean，这些Bean只有在特定环境下才会被加载并注册到Spring的bean容器中。
 
 要使用Profile功能，需要在Bean上使用@Profile注解来指定所属的环境，例如：
 
 ```
-javaCopy code
+@Component 
+@Profile("test") public class MyTestBean { // ... }
 ```
-
-`@Component @Profile("test") public class MyTestBean { // ... }`
 
 在上面的示例中，@Profile("test")表示这个Bean只在test环境下才会被注册到Spring的bean容器中。如果你在其他环境下启动应用程序，这个Bean将不会被加载。
 
