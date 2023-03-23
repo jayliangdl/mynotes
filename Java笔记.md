@@ -45,7 +45,7 @@ context.refresh();
 
 这样，即使该类所在的包没有被扫描到，也可以将它注册到Spring的bean容器中。
 
-问：使用哪个ApplicationContext不需要指定@ComponentScan，就可以扫描到这个启动类下面的所有加了@Component的类呢？
+### **_问：使用哪个ApplicationContext不需要指定@ComponentScan，就可以扫描到这个启动类下面的所有加了@Component的类呢？_**
 
 在Spring Boot应用程序中，可以使用@SpringBootApplication注解来标记启动类，它包含了三个常用的注解：@Configuration、@EnableAutoConfiguration和@ComponentScan，其中@ComponentScan会自动扫描@SpringBootApplication所在的包及其子包中的所有组件。
 
@@ -54,12 +54,10 @@ context.refresh();
 例如：
 
 ```
-```
-
-```
 @SpringBootApplication 
 public class MyApp { 
-    public static void main(String[] args) {                            
+    public static void main(String[] args) {
+         SpringApplication.run(MyApp.class, args);                            
     } 
 }
 ```
