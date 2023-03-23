@@ -36,6 +36,30 @@ TestCondition类实现了Spring的Condition接口，它重写了matches()方法�
 
 ### 除了Conditional这种方式外，还有其他方式某个Bean要在某种情况下才被加载（注册给spring管理）吗？
 
+除了使用@Conditional注解外，还可以使用Spring的Profile功能来有条件地加载Bean。Profile是一种将Bean注册到特定环境中的机制，它可以让你定义一组Bean，这些Bean只有在特定环境下才会被加载并注册到Spring的bean容器中。
+
+要使用Profile功能，需要在Bean上使用@Profile注解来指定所属的环境，例如：
+
+```
+javaCopy code
+```
+
+`@Component @Profile("test") public class MyTestBean { // ... }`
+
+在上面的示例中，@Profile("test")表示这个Bean只在test环境下才会被注册到Spring的bean容器中。如果你在其他环境下启动应用程序，这个Bean将不会被加载。
+
+在启动应用程序时，可以通过设置spring.profiles.active属性来指定要加载的环境，例如：
+
+```
+bashCopy code
+```
+
+`java -jar myapp.jar --spring.profiles.active=test`
+
+这将启动应用程序，并将环境设置为test，这样所有带有@Profile("test")注解的Bean将会被加载并注册到Spring的bean容器中。
+
+需要注意的是，如果不指定spring.profiles.active属性，则默认情况下所有不带@Profile注解的Bean都会被加载并注册到Spring的bean容器中。因此，在使用Profile功能时，要确保你只将必须的Bean标记为特定环境的Bean，以避免不必要的资源浪费。
+
 ### **_问：Spring中有哪些常用的ApplicationContext？_**
 
 - ClassPathXmlApplicationContext：可以通过在classpath中查找XML文件来装配bean。
