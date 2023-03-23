@@ -79,10 +79,11 @@ javaCopy code
 要使用这个方式，需要在应用程序中手动添加MyBeanFactoryPostProcessor组件，并设置特定的系统属性，例如：
 
 ```
-javaCopy code
+@SpringBootApplication 
+public class MyApp { 
+   public static void main(String[] args) {
+   System.setProperty("myapp.env", "test"); SpringApplication.run(MyApp.class, args); } }
 ```
-
-`@SpringBootApplication public class MyApp { public static void main(String[] args) { System.setProperty("myapp.env", "test"); SpringApplication.run(MyApp.class, args); } }`
 
 在上面的示例中，我们手动设置了myapp.env属性的值为"test"，这样在应用程序启动时，MyBeanFactoryPostProcessor将会被加载，并根据myapp.env属性的值来判断是否加载MyTestBean。
 
