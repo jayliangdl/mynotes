@@ -24,8 +24,8 @@ TestCondition类的实现示例如下：
 public class TestCondition implements Condition { 
     @Override 
     public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) { 
-        String env =   context.getEnvironment().getProperty("spring.profiles.active"); 
-    return env != null && env.equals("test"); 
+        String env = context.getEnvironment().getProperty("spring.profiles.active"); 
+        return env != null && env.equals("test"); 
     } 
 }
 ```
@@ -46,7 +46,7 @@ TestCondition类实现了Spring的Condition接口，它重写了matches()方法�
 
 - AnnotationConfigWebApplicationContext：可以在Web应用程序中使用注解配置应用程序上下文。
 
-### 问：如果我只是在项目的某个类中添加了@component注解，使用AnnotationConfigApplicationContext启动，好像并没有将此类注册到Spring的bean容器中。
+**_问：如果我只是在项目的某个类中添加了@component注解，使用AnnotationConfigApplicationContext启动，好像并没有将此类注册到Spring的bean容器中。_**
 
 使用AnnotationConfigApplicationContext启动时，默认情况下它会扫描指定的配置类及其子包中的所有组件，并将它们注册到Spring的bean容器中。但是，如果你只是在某个类上添加了@Component注解，可能是因为这个类所在的包没有被扫描到。
 
