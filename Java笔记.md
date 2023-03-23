@@ -217,3 +217,5 @@ BeanDefinition beanDefinition = builder.getBeanDefinition();
 BeanDefinitionRegistry registry = new DefaultListableBeanFactory();
 registry.registerBeanDefinition("demoService", beanDefinition);
 ```
+
+### 如果某一些类的初始化方法是带参数的，且参数是需要有一些业务逻辑计算才能定下来的，我使用编程的方式（非xml或非注解的方式），我应该怎么实现让这些类可以初始化并交给Spring管理？
