@@ -219,3 +219,5 @@ registry.registerBeanDefinition("demoService", beanDefinition);
 ```
 
 ### 如果某一些类的初始化方法是带参数的，且参数是需要有一些业务逻辑计算才能定下来的，我使用编程的方式（非xml或非注解的方式），我应该怎么实现让这些类可以初始化并交给Spring管理？
+
+在这种情况下，可以使用Spring的BeanFactoryPostProcessor回调机制来实现。BeanFactoryPostProcessor提供了一种方法，用来在BeanFactory中定义bean之前，为bean进行拦截，并在bean定义被加载之前进行处理。 可以通过实现BeanFactoryPostProcessor接口，重写postProcessBeanFactory()方法，定义一个bean的定义，添加bean的构造函数参数，然后将bean的定义注册到IoC容器中。
