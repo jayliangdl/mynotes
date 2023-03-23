@@ -45,4 +45,4 @@ context.refresh();
 
 这样，即使该类所在的包没有被扫描到，也可以将它注册到Spring的bean容器中。
 
-WENT
+问：使用哪个ApplicationContext不需要指定@ComponentScan，就可以扫描到这个启动类下面的所有加了@Component的类呢？
