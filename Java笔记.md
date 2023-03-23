@@ -60,6 +60,8 @@ java -jar myapp.jar --spring.profiles.active=test
 
 需要注意的是，如果不指定spring.profiles.active属性，则默认情况下所有不带@Profile注解的Bean都会被加载并注册到Spring的bean容器中。因此，在使用Profile功能时，要确保你只将必须的Bean标记为特定环境的Bean，以避免不必要的资源浪费。
 
+### 如果使用profile的方式，是否每个Bean都要指定它的profile，如果大部分类都是默认在什么情况都需要加载，只是少部分类是需要指定，那使用profile方案时候都需要将所有类加上profile吗？
+
 ### **_除了Conditional和_**Profile**_这两种方式外，还有其他方式某个Bean要在某种情况下才被加载（注册给spring管理）吗？_**
 
 除了使用@Conditional注解和Profile功能外，还可以使用Spring的BeanFactoryPostProcessor接口来有条件地加载Bean。
