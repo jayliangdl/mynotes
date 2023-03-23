@@ -195,9 +195,9 @@ public class MyApp {
 
 例如：
 
- 
-
-<bean id="demoService" class="com.demo.service.DemoServiceImpl"> <property name="demoDao" ref="demoDao"/> </bean>
+```
+ <bean id="demoService" class="com.demo.service.DemoServiceImpl"> <property name="demoDao" ref="demoDao"/> </bean>
+```
 
 2\. 通过Java注解配置bean，使用@Component、@Service、@Repository、@Controller等注解配置bean。
 
