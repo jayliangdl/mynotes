@@ -18,4 +18,4 @@
 
 - AnnotationConfigWebApplicationContext：可以在Web应用程序中使用注解配置应用程序上下文。
 
-### 问：
+### 问：如果我只是在项目的某个类中添加了@component注解，使用AnnotationConfigApplicationContext启动，好像并没有将此类注册到Spring的bean容器中。
