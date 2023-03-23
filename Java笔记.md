@@ -83,7 +83,7 @@ public class MyConfig {
 
 因此，您只需要在需要根据Profile来决定是否加载的Bean上指定Profile，而不必将所有Bean都设置为Profile。
 
-### **_除了Conditional和_**Profile**_这两种方式外，还有其他方式某个Bean要在某种情况下才被加载（注册给spring管理）吗？_**
+### **_除了Conditional和_Profile**_这两种方式外，还有其他方式某个Bean要在某种情况下才被加载（注册给spring管理）吗？_
 
 除了使用@Conditional注解和Profile功能外，还可以使用Spring的BeanFactoryPostProcessor接口来有条件地加载Bean。
 
@@ -184,3 +184,5 @@ public class MyApp {
 ### **_问：除了SpringBootApplication，还有其他ApplicationContext不需要指定@ComponentScan，就可以扫描到这个启动类下面的所有加了@Component的类吗？_**
 
 除了SpringBootApplication注解外，其他常用的ApplicationContext实现类都需要显式指定@Configuration和@ComponentScan注解，才能够自动扫描指定包及其子包下的所有组件。而SpringBootApplication注解包含了@Configuration、@EnableAutoConfiguration和@ComponentScan注解，因此可以省略@Configuration和@ComponentScan注解的配置。
+
+### 问：在spring中，怎么把一个类交给Spring管理？有哪几种方式？
