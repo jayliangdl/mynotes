@@ -185,7 +185,7 @@ public class MyApp {
 
 除了SpringBootApplication注解外，其他常用的ApplicationContext实现类都需要显式指定@Configuration和@ComponentScan注解，才能够自动扫描指定包及其子包下的所有组件。而SpringBootApplication注解包含了@Configuration、@EnableAutoConfiguration和@ComponentScan注解，因此可以省略@Configuration和@ComponentScan注解的配置。
 
-### 问：在spring中，怎么把一个类交给Spring管理？有哪几种方式？
+### **_问：在spring中，怎么把一个类交给Spring管理？有哪几种方式？_**
 
 在spring中，将一个类交给Spring管理有以下几种方式：
 
