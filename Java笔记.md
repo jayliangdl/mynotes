@@ -72,10 +72,14 @@ BeanFactoryPostProcessor是Spring提供的一个接口，用于在Bean加载之�
 @Component 
 public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor { 
 @Override 
-public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException { 
-    String env = System.getProperty("myapp.env"); 
-    if (env != null && env.equals("test")) { 
-        BeanDefinition beanDefinition = BeanDefinitionBuilder.genericBeanDefinition(MyTestBean.class).getBeanDefinition(); beanFactory.registerBeanDefinition("myTestBean", beanDefinition); } } }
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException { 
+        String env = System.getProperty("myapp.env"); 
+        if (env != null && env.equals("test")) { 
+            BeanDefinition beanDefinition = BeanDefinitionBuilder.genericBeanDefinition(MyTestBean.class).getBeanDefinition(); 
+            beanFactory.registerBeanDefinition("myTestBean", beanDefinition); 
+        } 
+    } 
+}
 ```
 
 在上面的示例中，MyBeanFactoryPostProcessor实现了BeanFactoryPostProcessor接口，并在postProcessBeanFactory()方法中判断当前环境是否为测试环境。如果是测试环境，则通过BeanDefinitionBuilder来构造MyTestBean的Bean定义，并将它注册到Spring的bean容器中。
