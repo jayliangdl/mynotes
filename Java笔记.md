@@ -210,4 +210,10 @@ public class DemoServiceImpl implements DemoService {
 
 3\. 通过Java API配置bean，使用BeanDefinition、BeanDefinitionRegistry等API将bean注册到IoC容器。
 
-\`\`
+```
+BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(DemoServiceImpl.class);
+builder.addPropertyReference("demoDao", "demoDao");
+BeanDefinition beanDefinition = builder.getBeanDefinition();
+BeanDefinitionRegistry registry = new DefaultListableBeanFactory();
+registry.registerBeanDefinition("demoService", beanDefinition);
+```
