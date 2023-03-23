@@ -9,20 +9,21 @@
 可以使用Spring中的@Conditional注解来实现有条件地加载Bean，@Conditional注解允许你定义一个或多个条件，只有满足条件时才会加载Bean。以下是一个简单的示例，展示如何根据当前环境来有条件地加载Bean：
 
 ```
-javaCopy code
+@Component 
+@Conditional(TestCondition.class) 
+public class MyTestBean { 
+    // ... 
+}
 ```
-
-`@Component @Conditional(TestCondition.class) public class MyTestBean { // ... }`
 
 在上面的示例中，@Conditional注解引用了TestCondition.class，它是一个自定义的Condition接口的实现类，用于判断当前环境是否为测试环境。如果当前环境是测试环境，则MyTestBean将被加载并注册到Spring的bean容器中。
 
 TestCondition类的实现示例如下：
 
 ```
-javaCopy code
+public class TestCondition implements Condition { 
+@Override public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) { String env = context.getEnvironment().getProperty("spring.profiles.active"); return env != null && env.equals("test"); } }
 ```
-
-`public class TestCondition implements Condition { @Override public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) { String env = context.getEnvironment().getProperty("spring.profiles.active"); return env != null && env.equals("test"); } }`
 
 TestCondition类实现了Spring的Condition接口，它重写了matches()方法，该方法用于判断当前环境是否为测试环境。在上面的示例中，它通过context.getEnvironment().getProperty("spring.profiles.active")获取当前环境的名称，并判断是否为"test"。如果是测试环境，则返回true，否则返回false。
 
