@@ -278,6 +278,24 @@ public class MyBeanFactoryAware implements BeanFactoryAware {
 
 - 通过ApplicationContextAware获取ApplicationContext实例：
 
+```
+@Component
+public class MyBean implements ApplicationContextAware {
+    private ApplicationContext applicationContext;
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+    }
+
+    public void doSomething() {
+        // 使用ApplicationContext实例获取其他Bean实例
+        MyOtherBean otherBean = applicationContext.getBean(MyOtherBean.class);
+        // ...
+    }
+}
+```
+
 ###  如何获取到一个applicationContext？
 
 创建`ApplicationContext`实例有多种方式，其中最常见的方式是使用`AnnotationConfigApplicationContext`和`ClassPathXmlApplicationContext`。这两种方式分别用于基于Java配置和基于XML配置的Spring应用程序。下面是两种方式的示例代码：
