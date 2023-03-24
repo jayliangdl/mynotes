@@ -276,7 +276,7 @@ public class MyBeanFactoryAware implements BeanFactoryAware {
 }
 ```
 
-- 
+- 通过ApplicationContextAware获取ApplicationContext实例：
 
 ###  如何获取到一个applicationContext？
 
