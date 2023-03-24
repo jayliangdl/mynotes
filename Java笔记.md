@@ -262,6 +262,40 @@ MyService myService = (MyService) context.getBean("myService");
 
 ###  如何获取到一个applicationContext？
 
+创建`ApplicationContext`实例有多种方式，其中最常见的方式是使用`AnnotationConfigApplicationContext`和`ClassPathXmlApplicationContext`。这两种方式分别用于基于Java配置和基于XML配置的Spring应用程序。下面是两种方式的示例代码：
+
+1. 使用`AnnotationConfigApplicationContext`创建基于Java配置的Spring应用程序：
+
+```
+javaCopy code
+```
+
+`@Configuration @ComponentScan("com.example") public class AppConfig { // 配置Bean @Bean public MyService myService() { return new MyServiceImpl(); } } public class MainApp { public static void main(String[] args) { ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class); MyService myService = context.getBean(MyService.class); myService.doSomething(); } }`
+
+在上述代码中，`AppConfig`类使用`@Configuration`注解表示它是一个基于Java配置的类，`@ComponentScan`注解用于自动扫描`com.example`包下的组件。`MyService`是一个接口，`MyServiceImpl`是它的实现类。在`AppConfig`类中，使用`@Bean`注解配置了`MyServiceImpl`这个Bean。在`MainApp`类中，创建了一个`AnnotationConfigApplicationContext`实例，并传入`AppConfig`类的Class对象。然后使用`getBean()`方法获取`MyService`这个Bean的实例，并调用它的方法。
+
+2. 使用`ClassPathXmlApplicationContext`创建基于XML配置的Spring应用程序：
+
+假设我们有一个名为`applicationContext.xml`的Spring配置文件，它位于项目的`src/main/resources`目录下，内容如下：
+
+```
+xmlCopy code
+```
+
+`<?xml version="1.0" encoding="UTF-8"?> <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> <bean id="myService" class="com.example.MyServiceImpl"/> </beans>`
+
+我们可以使用`ClassPathXmlApplicationContext`类加载这个配置文件并创建`ApplicationContext`实例，示例代码如下：
+
+```
+javaCopy code
+```
+
+`public class MainApp { public static void main(String[] args) { ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml"); MyService myService = context.getBean(MyService.class); myService.doSomething(); } }`
+
+在上述代码中，`ClassPathXmlApplicationContext`类的构造方法中传入了`applicationContext.xml`这个文件的路径，然后使用`getBean()`方法获取`MyService`这个Bean的实例，并调用它的方法。
+
+需要注意的是，在使用`ClassPathXmlApplicationContext`加载XML配置文件时，需要保证这个配置文件在类路径下，否则会抛出`FileNotFoundException`异常。
+
 ### **_@Autowired和@Resource的区别有哪些？_**
 
 `@Autowired`和`@Resource`注解都可以用于自动装配Bean，但是它们之间还是有一些区别的：
