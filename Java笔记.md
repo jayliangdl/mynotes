@@ -245,7 +245,7 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
 @Autowired  @Resource
 
-哪些方法可以从Spring容器中获取到一个Bean的实例？
+### **_哪些方法可以从Spring容器中获取到一个Bean的实例？_**
 
 - 注解方式（@Autowired @Resource）
 
