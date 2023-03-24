@@ -305,12 +305,17 @@ public class MainApp {
 </beans>
 ```
 
-`<?xml version="1.0" encoding="UTF-8"?> <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> <bean id="myService" class="com.example.MyServiceImpl"/> </beans>`
-
 我们可以使用`ClassPathXmlApplicationContext`类加载这个配置文件并创建`ApplicationContext`实例，示例代码如下：
 
 ```
-javaCopy code
+public class MainApp {
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        MyService myService = context.getBean(MyService.class);
+        myService.doSomething();
+    }
+}
 ```
 
 `public class MainApp { public static void main(String[] args) { ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml"); MyService myService = context.getBean(MyService.class); myService.doSomething(); } }`
