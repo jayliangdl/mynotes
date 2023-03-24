@@ -251,7 +251,14 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
 - 从ApplicationContext获取
 
-- 
+`ApplicationContext`是Spring框架中管理Bean的容器，我们可以通过它来获取Bean的实例。首先需要获取`ApplicationContext`实例，然后可以使用`getBean`方法获取对应的Bean。示例代码如下：
+
+```
+ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+MyService myService = (MyService) context.getBean("myService");
+```
+
+其中，`applicationContext.xml`是Spring配置文件的名称，`myService`是要获取的Bean的名称。需要注意的是，使用这种方式获取Bean需要手动创建`ApplicationContext`实例，并手动管理Bean的生命周期。
 
 ### **_@Autowired和@Resource的区别有哪些？_**
 
