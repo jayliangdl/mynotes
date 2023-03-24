@@ -83,7 +83,7 @@ public class MyConfig {
 
 因此，您只需要在需要根据Profile来决定是否加载的Bean上指定Profile，而不必将所有Bean都设置为Profile。
 
-### **\_除了Conditional和\_Profile**_这两种方式外，还有其他方式某个Bean要在某种情况下才被加载（注册给spring管理）吗？_
+### **_除了Conditional和Profile这两种方式外，还有其他方式某个Bean要在某种情况下才被加载（注册给spring管理）吗？_**
 
 除了使用@Conditional注解和Profile功能外，还可以使用Spring的BeanFactoryPostProcessor接口来有条件地加载Bean。
 
