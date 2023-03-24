@@ -262,6 +262,20 @@ MyService myService = (MyService) context.getBean("myService");
 
 - 通过BeanFactory获取Bean实例
 
+```
+@Component
+public class MyBeanFactoryAware implements BeanFactoryAware {
+    private BeanFactory beanFactory;
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        this.beanFactory = beanFactory;
+    }
+    public Object getBean(String name) {
+        return beanFactory.getBean(name);
+    }
+}
+```
+
 - 
 
 ###  如何获取到一个applicationContext？
