@@ -260,6 +260,10 @@ MyService myService = (MyService) context.getBean("myService");
 
 其中，`applicationContext.xml`是Spring配置文件的名称，`myService`是要获取的Bean的名称。**需要注意的是，使用这种方式获取Bean需要手动创建**`ApplicationContext`**实例**，并手动管理Bean的生命周期。
 
+- 通过BeanFactory获取Bean实例
+
+- 
+
 ###  如何获取到一个applicationContext？
 
 创建`ApplicationContext`实例有多种方式，其中最常见的方式是使用`AnnotationConfigApplicationContext`和`ClassPathXmlApplicationContext`。这两种方式分别用于基于Java配置和基于XML配置的Spring应用程序。下面是两种方式的示例代码：
