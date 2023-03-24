@@ -267,7 +267,24 @@ MyService myService = (MyService) context.getBean("myService");
 1. 使用`AnnotationConfigApplicationContext`创建基于Java配置的Spring应用程序：
 
 ```
-javaCopy code
+@Configuration
+@ComponentScan("com.example")
+public class AppConfig {
+    // 配置Bean
+    @Bean
+    public MyService myService() {
+        return new MyServiceImpl();
+    }
+}
+
+public class MainApp {
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        MyService myService = context.getBean(MyService.class);
+        myService.doSomething();
+    }
+}
 ```
 
 `@Configuration @ComponentScan("com.example") public class AppConfig { // 配置Bean @Bean public MyService myService() { return new MyServiceImpl(); } } public class MainApp { public static void main(String[] args) { ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class); MyService myService = context.getBean(MyService.class); myService.doSomething(); } }`
