@@ -251,12 +251,13 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
 1. 来源不同
 
-`@Autowired`是Spring框架提供的注解，而`@Resource`是JavaEE标准注解，可以与Spring框架集成。因此，如果只使用Spring框架，建议使用`@Autowired`；如果需要与其他JavaEE框架集成，建议使用`@Resource`。
+`@Autowired`是Spring框架提供的注解，而`@Resource`是JavaEE标准注解，可以与Spring框架集成。
 
 2. 自动装配方式不同
 
 `@Autowired`默认按照类型进行自动装配，如果有多个同类型的Bean，则会按照名称进行匹配；而`@Resource`默认按照名称进行自动装配，如果没有指定名称，则会按照类型进行匹配。如果使用`@Resource`注解需要指定名称，可以使用`name`属性，例如：
 
 ```
-java
+@Resource(name = "myService")
+private MyService myService;
 ```
