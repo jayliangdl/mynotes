@@ -287,8 +287,6 @@ public class MainApp {
 }
 ```
 
-`@Configuration @ComponentScan("com.example") public class AppConfig { // 配置Bean @Bean public MyService myService() { return new MyServiceImpl(); } } public class MainApp { public static void main(String[] args) { ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class); MyService myService = context.getBean(MyService.class); myService.doSomething(); } }`
-
 在上述代码中，`AppConfig`类使用`@Configuration`注解表示它是一个基于Java配置的类，`@ComponentScan`注解用于自动扫描`com.example`包下的组件。`MyService`是一个接口，`MyServiceImpl`是它的实现类。在`AppConfig`类中，使用`@Bean`注解配置了`MyServiceImpl`这个Bean。在`MainApp`类中，创建了一个`AnnotationConfigApplicationContext`实例，并传入`AppConfig`类的Class对象。然后使用`getBean()`方法获取`MyService`这个Bean的实例，并调用它的方法。
 
 2. 使用`ClassPathXmlApplicationContext`创建基于XML配置的Spring应用程序：
