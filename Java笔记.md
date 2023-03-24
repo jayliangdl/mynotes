@@ -318,8 +318,6 @@ public class MainApp {
 }
 ```
 
-`public class MainApp { public static void main(String[] args) { ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml"); MyService myService = context.getBean(MyService.class); myService.doSomething(); } }`
-
 在上述代码中，`ClassPathXmlApplicationContext`类的构造方法中传入了`applicationContext.xml`这个文件的路径，然后使用`getBean()`方法获取`MyService`这个Bean的实例，并调用它的方法。
 
 需要注意的是，在使用`ClassPathXmlApplicationContext`加载XML配置文件时，需要保证这个配置文件在类路径下，否则会抛出`FileNotFoundException`异常。
