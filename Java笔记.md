@@ -258,5 +258,5 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 `@Autowired`默认按照类型进行自动装配，如果有多个同类型的Bean，则会按照名称进行匹配；而`@Resource`默认按照名称进行自动装配，如果没有指定名称，则会按照类型进行匹配。如果使用`@Resource`注解需要指定名称，可以使用`name`属性，例如：
 
 ```
-javaCopy code
+java
 ```
