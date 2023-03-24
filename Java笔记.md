@@ -260,5 +260,3 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 ```
 javaCopy code
 ```
-
-`@Resource(name = "myService") private MyService myService;`
