@@ -241,6 +241,8 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
 @Component、@Service、@Repository、@Controller等注解配置bean。
 
-哪些注解可以从Spring容器中获取到一个Bean的实例？
+### _哪些注解可以从Spring容器中获取到一个Bean的实例？_
 
 @Autowired  @Resource
+
+### **_@Autowired和@Resource的区别有哪些？_**
