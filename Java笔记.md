@@ -237,4 +237,8 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 }
 ```
 
-### 哪些注解可以让Bean
+### 哪些注解可以让类交给Spring管理？
+
+@Component、@Service、@Repository、@Controller等注解配置bean。
+
+哪些注解可以从Spring容器中获取到一个Bean的实例？
