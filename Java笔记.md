@@ -294,7 +294,15 @@ public class MainApp {
 假设我们有一个名为`applicationContext.xml`的Spring配置文件，它位于项目的`src/main/resources`目录下，内容如下：
 
 ```
-xmlCopy code
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="myService" class="com.example.MyServiceImpl"/>
+    
+</beans>
 ```
 
 `<?xml version="1.0" encoding="UTF-8"?> <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> <bean id="myService" class="com.example.MyServiceImpl"/> </beans>`
