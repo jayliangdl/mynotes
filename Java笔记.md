@@ -260,6 +260,8 @@ MyService myService = (MyService) context.getBean("myService");
 
 其中，`applicationContext.xml`是Spring配置文件的名称，`myService`是要获取的Bean的名称。**需要注意的是，使用这种方式获取Bean需要手动创建**`ApplicationContext`**实例**，并手动管理Bean的生命周期。
 
+###  如何获取到一个applicationContext？
+
 ### **_@Autowired和@Resource的区别有哪些？_**
 
 `@Autowired`和`@Resource`注解都可以用于自动装配Bean，但是它们之间还是有一些区别的：
