@@ -247,6 +247,12 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
 哪些方法可以从Spring容器中获取到一个Bean的实例？
 
+- 注解方式（@Autowired @Resource）
+
+- 从ApplicationContext获取
+
+- 
+
 ### **_@Autowired和@Resource的区别有哪些？_**
 
 `@Autowired`和`@Resource`注解都可以用于自动装配Bean，但是它们之间还是有一些区别的：
