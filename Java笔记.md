@@ -237,13 +237,15 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 }
 ```
 
-### 哪些注解可以让类交给Spring管理？
+### **_哪些注解可以让类交给Spring管理？_**
 
 @Component、@Service、@Repository、@Controller等注解配置bean。
 
-### _哪些注解可以从Spring容器中获取到一个Bean的实例？_
+### **_哪些注解可以从Spring容器中获取到一个Bean的实例？_**
 
 @Autowired  @Resource
+
+哪些方法可以从Spring容器中获取到一个Bean的实例？
 
 ### **_@Autowired和@Resource的区别有哪些？_**
 
