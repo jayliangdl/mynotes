@@ -300,7 +300,7 @@ public class MyBean implements ApplicationContextAware {
 
 需要注意的是，在使用`ApplicationContextAware`接口时，我们需要将实现该接口的类注册到Spring容器中作为Bean，才能使Spring容器自动调用`setApplicationContext()`方法。
 
-###  如何获取到一个applicationContext？
+###  **_如何获取到一个applicationContext？_**
 
 创建`ApplicationContext`实例有多种方式，其中最常见的方式是使用`AnnotationConfigApplicationContext`和`ClassPathXmlApplicationContext`。这两种方式分别用于基于Java配置和基于XML配置的Spring应用程序。下面是两种方式的示例代码：
 
