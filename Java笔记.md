@@ -362,6 +362,8 @@ public class MainApp {
 
 需要注意的是，在使用`ClassPathXmlApplicationContext`加载XML配置文件时，需要保证这个配置文件在类路径下，否则会抛出`FileNotFoundException`异常。
 
+3\.让类继承ApplicationContextAware
+
 ### **_@Autowired和@Resource的区别有哪些？_**
 
 `@Autowired`和`@Resource`注解都可以用于自动装配Bean，但是它们之间还是有一些区别的：
