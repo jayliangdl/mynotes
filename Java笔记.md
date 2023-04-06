@@ -362,7 +362,7 @@ public class MainApp {
 
 需要注意的是，在使用`ClassPathXmlApplicationContext`加载XML配置文件时，需要保证这个配置文件在类路径下，否则会抛出`FileNotFoundException`异常。
 
-3\.让类继承ApplicationContextAware
+3\.让类继承ApplicationContextAware，实现以下
 
 ### **_@Autowired和@Resource的区别有哪些？_**
 
