@@ -370,6 +370,13 @@ void setApplicationContext(ApplicationContext applicationContext) throws BeansEx
 
 实现如：
 
+```
+@Override
+public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+    this.applicationContext = applicationContext;
+}
+```
+
 ### **_@Autowired和@Resource的区别有哪些？_**
 
 `@Autowired`和`@Resource`注解都可以用于自动装配Bean，但是它们之间还是有一些区别的：
