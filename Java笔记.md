@@ -368,6 +368,8 @@ public class MainApp {
 void setApplicationContext(ApplicationContext applicationContext) throws BeansException;
 ```
 
+实现如：
+
 ### **_@Autowired和@Resource的区别有哪些？_**
 
 `@Autowired`和`@Resource`注解都可以用于自动装配Bean，但是它们之间还是有一些区别的：
